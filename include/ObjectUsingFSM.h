@@ -11,25 +11,25 @@ enum class EState
     STT_EAT
 };
 
-class ObjectUsingFSM : public AbstractFiniteStateMachine<EState>
+class ObjectUsingFSM : public FSM::FiniteStateMachine
 {
 public:
     ObjectUsingFSM(){}
 
 protected:
-    void UpdateState( EState t ) override
+    void onUpdateState( const int& state ) override
     {
         int i = 0;
         i = i + 1;
     }
 
-    void BeginState( EState t ) override
+    void onBeginState(const int& state ) override
     {
         int i = 0;
         i = i + 1;
     }
 
-    void EndState( EState t ) override
+    void onEndState( const int& state ) override
     {
         int i = 0;
         i = i + 1;
